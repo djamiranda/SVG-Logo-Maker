@@ -22,29 +22,29 @@ function promptUser() {
     .prompt([
       {
         type: "input",
-        message: "Please enter up to three characters ",
+        message: "Please enter up to three characters:",
         name: "text",
       },
       {
         type: "input",
-        message: "Please enter your text color or hex #",
+        message: "Please enter your text color or hex #:",
         name: "textColor",
       },
       {
         type: "list",
-        message: "Please select your shape",
+        message: "Please select your shape:",
         choices: ["Triangle", "Square", "Circle"],
         name: "shape",
       },
       {
         type: "input",
-        message: "Please enter your shape color or hex #",
+        message: "Please enter your shape color or hex #:",
         name: "shapeBackgroundColor",
       },
     ])
     .then((answers) => {
       if (answers.text.length > 3) {
-        console.log("Please enter only up to three characters");
+        console.log("Please enter only up to three characters:");
         promptUser();
       } else {
         writeToFile("logo.svg", answers);
